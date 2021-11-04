@@ -21,9 +21,9 @@ const NewCommentForm = (props) => {
 	const submitFormHandler = (event) => {
 		event.preventDefault();
 
-		// optional: Could validate here
-
 		const enteredText = commentTextRef.current.value;
+
+		if (!enteredText) return;
 
 		sendRequest({ commentData: { text: enteredText }, quoteId });
 	};
